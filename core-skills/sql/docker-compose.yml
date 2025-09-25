@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:17
+    container_name: leetcode_pg17
+    restart: unless-stopped
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    command: >
+      postgres -c track_io_timing=on
+               -c shared_preload_libraries=pg_stat_statements
+               -c pg_stat_statements.max=10000
+               -c pg_stat_statements.track=all
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

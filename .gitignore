@@ -1,0 +1,30 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+out/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.eclipse/
+.settings/
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+
+# Gradle
+.gradle/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
