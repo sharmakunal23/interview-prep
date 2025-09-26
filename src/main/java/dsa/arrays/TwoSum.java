@@ -12,17 +12,18 @@ import java.util.Map;
  * Given nums[] and target, return indices i,j such that nums[i] + nums[j] = target.
  * Exactly one solution. Do not reuse the same element twice.
  *
- * <p>
- * Approach:
- * HashMap value->index. For each x at i, check if (target - x) exists; if yes, return pair.
- * Insert x after check to avoid using the same index twice.
- *
- * <p>
- * Complexity:
- * Time: O(n)  Space: O(n)
  */
 public class TwoSum {
 
+    /**
+     * Approach:
+     * HashMap value->index. For each x at i, check if (target - x) exists; if yes, return pair.
+     * Insert x after check to avoid using the same index twice.
+     *
+     * <p>
+     * Complexity:
+     * Time: O(n)  Space: O(n)
+     */
     public int[] hashMapSolution(int[] nums, int target) {
         if (nums == null || nums.length < 2) {
             throw new IllegalArgumentException("nums must have length >= 2");
