@@ -1,0 +1,7 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: n"
+"jmh.dsa.arrays.MergeSortArrayBenchmark.bruteForceMerge","thrpt",1,3,2524.958128,494.274720,"ops/ms",100
+"jmh.dsa.arrays.MergeSortArrayBenchmark.bruteForceMerge","thrpt",1,3,92.174805,55.514857,"ops/ms",10000
+"jmh.dsa.arrays.MergeSortArrayBenchmark.bruteForceMerge","thrpt",1,3,0.520529,0.129853,"ops/ms",1000000
+"jmh.dsa.arrays.MergeSortArrayBenchmark.optimizedMerge","thrpt",1,3,12767.804595,6958.811010,"ops/ms",100
+"jmh.dsa.arrays.MergeSortArrayBenchmark.optimizedMerge","thrpt",1,3,115.534991,111.314703,"ops/ms",10000
+"jmh.dsa.arrays.MergeSortArrayBenchmark.optimizedMerge","thrpt",1,3,1.127611,0.130825,"ops/ms",1000000

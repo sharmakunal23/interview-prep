@@ -7,14 +7,17 @@ import java.util.Map;
  * Title: Two Sum (LeetCode 1)   Topic: arrays   Difficulty: Easy
  * Link: https://leetcode.com/problems/two-sum/
  *
+ * <p>
  * Problem:
  * Given nums[] and target, return indices i,j such that nums[i] + nums[j] = target.
  * Exactly one solution. Do not reuse the same element twice.
  *
+ * <p>
  * Approach:
  * HashMap value->index. For each x at i, check if (target - x) exists; if yes, return pair.
  * Insert x after check to avoid using the same index twice.
  *
+ * <p>
  * Complexity:
  * Time: O(n)  Space: O(n)
  */

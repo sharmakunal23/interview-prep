@@ -1,4 +1,4 @@
-"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: n","Param: samples"
-"jmh.dsa.arrays.TwoSumBenchmark.twoSumThroughput","thrpt",1,20,616.719880,16.715040,"ops/ms",100,1000
-"jmh.dsa.arrays.TwoSumBenchmark.twoSumThroughput","thrpt",1,20,29.011022,0.234690,"ops/ms",10000,1000
-"jmh.dsa.arrays.TwoSumBenchmark.twoSumThroughput","thrpt",1,20,27.758499,0.279411,"ops/ms",200000,1000
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: n"
+"jmh.dsa.arrays.TwoSumBenchmark.twoSumThroughput","thrpt",1,3,657.213667,192.353115,"ops/ms",100
+"jmh.dsa.arrays.TwoSumBenchmark.twoSumThroughput","thrpt",1,3,29.574804,6.679327,"ops/ms",10000
+"jmh.dsa.arrays.TwoSumBenchmark.twoSumThroughput","thrpt",1,3,26.555171,3.456601,"ops/ms",1000000

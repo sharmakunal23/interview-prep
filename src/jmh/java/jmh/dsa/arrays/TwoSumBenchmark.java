@@ -1,34 +1,20 @@
 package jmh.dsa.arrays;
 
 import dsa.arrays.TwoSum;
+import jmh.dsa.AbstractBenchmarkBase;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
+public class TwoSumBenchmark extends AbstractBenchmarkBase {
 
-@BenchmarkMode(Mode.Throughput)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
-@Warmup(iterations = 5, time = 500, timeUnit = TimeUnit.MILLISECONDS)
-@Measurement(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
-@Fork(value = 2)
-public class TwoSumBenchmark {
-
-    @State(Scope.Thread)
-    public static class InputState {
-        @Param({"100", "10000", "200000"})
-        public int n;
-
-        @Param({"1000"})
-        public int samples;
-
+    public static class InputState extends InputStateBase {
         private int[][] arrays;
         private int[] targets;
         private int cursor;
-        private final Random rnd = new Random(12345);
+        private final int samples = 1000;
         private final TwoSum twoSum = new TwoSum();
 
-        @Setup(Level.Trial)
+        @Override
         public void setup() {
             arrays = new int[samples][];
             targets = new int[samples];
