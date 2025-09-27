@@ -5,19 +5,34 @@ services:
     container_name: leetcode_pg17
     restart: unless-stopped
     ports:
-      - "${POSTGRES_PORT}:5432"
+      - "5432:5432"
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: leetcode
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
       PGDATA: /var/lib/postgresql/data/pgdata
-      POSTGRES_INITDB_ARGS: "--data-checksums"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./problems:/problems  # Mount problems directory
     command: >
       postgres -c track_io_timing=on
                -c shared_preload_libraries=pg_stat_statements
                -c pg_stat_statements.max=10000
                -c pg_stat_statements.track=all
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: leetcode_pgadmin
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgadmin_data:/var/lib/pgadmin
+
 volumes:
   pgdata:
+  pgadmin_data:

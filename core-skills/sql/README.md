@@ -2,10 +2,39 @@
 
 Commands:
 ```bash
+# Start the database on docker
 cd core-skills/sql
-scripts/sql-up.sh
-scripts/new-sql-problem.sh employees-earning-more-than-managers
-scripts/run.sh employees-earning-more-than-managers
-scripts/explain.sh employees-earning-more-than-managers
-scripts/sql-down.sh
+scripts/start.sh
+```
+
+```bash
+# Connect to database
+scripts/connect.sh
+```
+
+```sql
+-- List all tables
+\dt
+
+-- Describe table structure
+\d table_name
+
+-- Clear screen
+\! clear
+
+-- Exit
+\q
+
+-- Execute file
+\i /problems/your-problem/schema.sql
+
+-- Show current database
+SELECT current_database();
+
+-- Show query execution plan
+EXPLAIN ANALYZE SELECT * FROM your_table;
+```
+```bash
+# Stop database
+scripts/stop.sh
 ```
