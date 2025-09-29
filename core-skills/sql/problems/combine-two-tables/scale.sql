@@ -1,6 +1,7 @@
 -- Simple scale test with 1 million records
 -- Clear existing data
-TRUNCATE TABLE Address, Person RESTART IDENTITY CASCADE;
+DROP TABLE IF EXISTS Person;
+DROP TABLE IF EXISTS Address;
 
 -- Generate 1,000,000 Person records with random 8-letter names
 INSERT INTO Person (firstName, lastName)

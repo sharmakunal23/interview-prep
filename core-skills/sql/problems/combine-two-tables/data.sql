@@ -1,5 +1,5 @@
-TRUNCATE Person;
-TRUNCATE Address;
+DROP TABLE IF EXISTS Person;
+DROP TABLE IF EXISTS Address;
 
 -- Insert sample data into Person table (25+ records)
 INSERT INTO Person (personId, lastName, firstName)
