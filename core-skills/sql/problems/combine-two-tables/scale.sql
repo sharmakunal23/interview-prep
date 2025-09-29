@@ -1,7 +1,7 @@
 -- Simple scale test with 1 million records
 -- Clear existing data
-DROP TABLE IF EXISTS Person;
-DROP TABLE IF EXISTS Address;
+TRUNCATE Person;
+TRUNCATE Address;
 
 -- Generate 1,000,000 Person records with random 8-letter names
 INSERT INTO Person (firstName, lastName)
