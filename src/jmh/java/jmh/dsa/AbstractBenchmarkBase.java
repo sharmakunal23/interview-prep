@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @Warmup(iterations = 2, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 @Measurement(iterations = 3, time = 300, timeUnit = TimeUnit.MILLISECONDS)
-@Fork(value = 1)
+@Fork(value = 2)
 public class AbstractBenchmarkBase {
 
     @State(Scope.Benchmark)

@@ -8,6 +8,7 @@ import coding_design_principles.design.creational.singleton.ThreadSafeSingleton;
 import jmh.dsa.AbstractBenchmarkBase;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.infra.Blackhole;
 
 public class SingletonBenchmark extends AbstractBenchmarkBase {
@@ -19,6 +20,7 @@ public class SingletonBenchmark extends AbstractBenchmarkBase {
         }
     }
 
+    @Threads(4)
     @Benchmark
     public void testEnumInstanceAccess(InputState state, Blackhole bh) {
         for (int i = 0; i < state.n; i++) {
@@ -27,6 +29,7 @@ public class SingletonBenchmark extends AbstractBenchmarkBase {
         }
     }
 
+    @Threads(4)
     @Benchmark
     public void testLazySingletonAccess(InputState state, Blackhole bh) {
         for (int i = 0; i < state.n; i++) {
@@ -35,6 +38,7 @@ public class SingletonBenchmark extends AbstractBenchmarkBase {
         }
     }
 
+    @Threads(4)
     @Benchmark
     public void testThreadSafeAccess(InputState state, Blackhole bh) {
         for (int i = 0; i < state.n; i++) {
@@ -43,6 +47,7 @@ public class SingletonBenchmark extends AbstractBenchmarkBase {
         }
     }
 
+    @Threads(4)
     @Benchmark
     public void testDoubleCheckAccess(InputState state, Blackhole bh) {
         for (int i = 0; i < state.n; i++) {
@@ -51,6 +56,7 @@ public class SingletonBenchmark extends AbstractBenchmarkBase {
         }
     }
 
+    @Threads(4)
     @Benchmark
     public void testEagerSingletonAccess(InputState state, Blackhole bh) {
         for (int i = 0; i < state.n; i++) {
