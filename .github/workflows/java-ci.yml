@@ -1,7 +1,7 @@
 name: Java CI
 on:
   push:
-    branches: [ main, master, "**/feat/**" ]
+    branches: [ main, master, develop, "**/feat/**", "**/feature/**", "**/fix/**", "**/bug/**"]
   pull_request:
 jobs:
   build:
