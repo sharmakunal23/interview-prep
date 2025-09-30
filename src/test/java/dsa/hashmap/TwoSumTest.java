@@ -1,4 +1,4 @@
-package dsa.arrays;
+package dsa.hashmap;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

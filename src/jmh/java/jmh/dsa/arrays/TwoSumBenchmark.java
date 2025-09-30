@@ -1,6 +1,6 @@
 package jmh.dsa.arrays;
 
-import dsa.arrays.TwoSum;
+import dsa.hashmap.TwoSum;
 import jmh.dsa.AbstractBenchmarkBase;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
