@@ -1,8 +1,5 @@
 package dsa.binary_tree_general;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 /**
  * Title:  Symmetric Tree (LeetCode 101)   Topic: Binary Tree General   Difficulty: Easy <p>
  * Link: https://leetcode.com/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-interview-150
