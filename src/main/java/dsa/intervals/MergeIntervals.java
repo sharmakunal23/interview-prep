@@ -1,6 +1,8 @@
 package dsa.intervals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Title: Merge Intervals (LeetCode 56)   Topic: Intervals   Difficulty: Medium <p>
@@ -34,5 +36,32 @@ public class MergeIntervals {
         }
         result[index++] = start;
         return Arrays.copyOf(result, index);
+    }
+
+    // Link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/merge-and-sort-intervals/problem?isFullScreen=true
+    public static List<List<Integer>> mergeHighDefinitionIntervals(List<List<Integer>> intervals) {
+        // Write your code here
+        if (intervals.isEmpty()) {
+            return intervals;
+        }
+        intervals.sort((a, b) -> Integer.compare(a.get(0), b.get(0)));
+        int size = intervals.size();
+        List<List<Integer>> merged = new ArrayList<>(size);
+
+        int index = 0;
+        List<Integer> start = intervals.get(0);
+
+        for  (int i = 1; i < size; i++) {
+            if (intervals.get(i).get(0) <= start.get(1)) {
+                if (intervals.get(i).get(1) > start.get(1)) {
+                    start.set(1, intervals.get(i).get(1));
+                }
+            } else {
+                merged.add(start);
+                start = intervals.get(i);
+            }
+        }
+        merged.add(start);
+        return merged;
     }
 }

@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MergeIntervalsTest {
     private MergeIntervals mergeIntervals;
@@ -31,4 +34,23 @@ class MergeIntervalsTest {
         expectedResults = new int[][] {{1,7}};
         Assertions.assertArrayEquals(expectedResults, mergeIntervals.merge(intervals));
     }
+
+    @Test
+    void mergeHighDefinitionIntervals() {
+        List<List<Integer>> intervals = new ArrayList<>();
+        intervals.add(List.of(2,3));
+        intervals.add(List.of(1,6));
+        intervals.add(List.of(8,10));
+        intervals.add(List.of(15,18));
+
+        List<List<Integer>> expectedResults = List.of(List.of(1,6), List.of(8,10),  List.of(15,18));
+
+        List<List<Integer>> actualResults = mergeIntervals.mergeHighDefinitionIntervals(intervals);
+
+        for (int i = 0; i < actualResults.size(); i++) {
+            assertEquals(expectedResults.get(i), actualResults.get(i));
+        }
+    }
+
+
 }
