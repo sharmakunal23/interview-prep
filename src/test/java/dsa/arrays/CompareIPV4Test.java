@@ -42,6 +42,6 @@ class CompareIPV4Test {
         assertEquals(ip1, compareIPV4.solution(ip1, ip2));
 
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> compareIPV4.solution("", "192.168.1.2"));
-        assertEquals("IPv4 is invalid", thrown.getMessage());
+        assertEquals("IPv4 is invalid with ip: ", thrown.getMessage());
     }
 }

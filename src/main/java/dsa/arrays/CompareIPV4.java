@@ -19,11 +19,16 @@ public class CompareIPV4 {
         int[] ipBlock = {-1, -1, -1, -1};
         String[] block = ip.split("\\.");
 
-        for (int i = 0; i < block.length; i++){
+        int size = block.length;
+        if (size > 4 || size < 1){
+            throw new IllegalArgumentException("IPv4 is invalid with ip: "+ ip);
+        }
+
+        for (int i = 0; i < size; i++){
             try {
                 ipBlock[i] = Integer.parseInt(block[i]);
             } catch (NumberFormatException e) {
-                throw new IllegalArgumentException("IPv4 is invalid");
+                throw new IllegalArgumentException("IPv4 is invalid with ip: "+ ip);
             }
         }
 
