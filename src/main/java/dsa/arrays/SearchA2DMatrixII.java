@@ -20,8 +20,8 @@ public class SearchA2DMatrixII {
 
         for (int i = 0; i < matrix.length; i++) {
             if (matrix[i][0] > target || matrix[i][innerMaxIndex] < target) {
-                // if the target is less tha the minimum value in the array
-                // or grater than the maximum value than no need to searh in the array
+                // if the target is less than the minimum value in the array
+                // or greater than the maximum value than no need to search in the array
                 continue;
             }
             index = binarySearch(matrix[i], target);
