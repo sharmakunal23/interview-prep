@@ -41,7 +41,7 @@ class MaximumDepthOfBinaryTreeTest {
     }
 
     @Test
-    void maxDepthIterativeBfS() {
+    void maxDepthIterativeBFS() {
         Assertions.assertEquals(3, maximumDepthOfBinaryTree.maxDepthIterativeBFS(root));
 
         root.right.left.left = new TreeNode(99);

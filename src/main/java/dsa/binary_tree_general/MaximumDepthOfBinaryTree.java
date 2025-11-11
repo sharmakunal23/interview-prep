@@ -1,7 +1,5 @@
 package dsa.binary_tree_general;
 
-import org.apache.commons.math3.util.Pair;
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -42,20 +40,41 @@ public class MaximumDepthOfBinaryTree {
      * Time: O(n)  Space: O(n): n = number of nodes
      */
     public int maxDepthIterativeDFS(TreeNode root) {
-        Stack<Pair<TreeNode, Integer>> stack = new Stack<>();
-        stack.push(new Pair<>(root, 1));
+
         int maxDepth = 0;
+
+        if (root == null) {
+            return maxDepth;
+        }
+
+        Stack<Pair> stack = new Stack<>();
+
+        stack.push(new Pair(root, 1));
+
         while (!stack.isEmpty()) {
-            Pair<TreeNode, Integer> pair = stack.pop();
-            TreeNode node = pair.getKey();
-            int depth = pair.getValue();
+            Pair pair = stack.pop();
+
+            TreeNode node = pair.node;
+            int depth = pair.depth;
+
             if (node != null) {
-                maxDepth = Math.max(maxDepth, depth);
-                stack.push(new Pair<>(node.left, depth + 1));
-                stack.push(new Pair<>(node.right, depth + 1));
+                maxDepth = Math.max(depth, maxDepth);
+                stack.push(new Pair(node.left, depth + 1));
+                stack.push(new Pair(node.right, depth + 1));
             }
         }
+
         return maxDepth;
+    }
+
+    private class Pair {
+        TreeNode node;
+        int depth;
+
+        public Pair(TreeNode node, int depth) {
+            this.node = node;
+            this.depth = depth;
+        }
     }
 
     /**
@@ -65,22 +84,35 @@ public class MaximumDepthOfBinaryTree {
      * Time: O(n)  Space: O(n): n = number of nodes
      */
     public int maxDepthIterativeBFS(TreeNode root) {
+
+        int count = 0;
+
+        if (root == null) {
+            return count;
+        }
+
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        int maxDepth = 0;
+
+        queue.offer(root);
+
         while (!queue.isEmpty()) {
             int size = queue.size();
+
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
+
                 if (node.left != null) {
-                    queue.add(node.left);
+                    queue.offer(node.left);
                 }
+
                 if (node.right != null) {
-                    queue.add(node.right);
+                    queue.offer(node.right);
                 }
             }
-            maxDepth++;
+
+            count++;
         }
-        return maxDepth;
+
+        return count;
     }
 }
