@@ -23,27 +23,23 @@ class NumberOfIslandsTest {
     @Test
     public void testEmptyGrid() {
         char[][] grid = {};
-        NumberOfIslands solution = new NumberOfIslands();
         assertEquals(0, islands.numIslands(grid));
     }
 
     @Test
     public void testNullGrid() {
-        NumberOfIslands solution = new NumberOfIslands();
         assertEquals(0, islands.numIslands(null));
     }
 
     @Test
     public void testSingleLand() {
         char[][] grid = {{'1'}};
-        NumberOfIslands solution = new NumberOfIslands();
         assertEquals(1, islands.numIslands(grid));
     }
 
     @Test
     public void testSingleWater() {
         char[][] grid = {{'0'}};
-        NumberOfIslands solution = new NumberOfIslands();
         assertEquals(0, islands.numIslands(grid));
     }
 
@@ -54,7 +50,6 @@ class NumberOfIslandsTest {
                 {'0', '0', '0'},
                 {'0', '0', '0'}
         };
-        NumberOfIslands solution = new NumberOfIslands();
         assertEquals(0, islands.numIslands(grid));
     }
 
@@ -66,7 +61,6 @@ class NumberOfIslandsTest {
                 {'0', '0', '1', '0', '0'},
                 {'0', '0', '0', '1', '1'}
         };
-        NumberOfIslands solution = new NumberOfIslands();
         assertEquals(3, islands.numIslands(grid));
     }
 }
